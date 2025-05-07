@@ -2,9 +2,9 @@ import sbt._
 
 object Dependencies {
 
-  val zioVersion = "2.0.20"
-  val zioHttpVersion = "3.0.0-RC4"
-  val tapirVersion = "1.9.8"
+  val zioVersion = "2.1.17"
+  val zioHttpVersion = "3.2.0"
+  val tapirVersion = "1.11.3"
 
   val zioHttp     = "dev.zio" %% "zio-http"     % zioHttpVersion
   val tapir = "com.softwaremill.sttp.tapir" %% "tapir-zio-http-server" % tapirVersion

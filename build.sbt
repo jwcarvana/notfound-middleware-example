@@ -2,7 +2,7 @@ import Dependencies._
 
 ThisBuild / organization := "com.example"
 ThisBuild / version := "0.0.1"
-ThisBuild / scalaVersion      := "2.13.12"
+ThisBuild / scalaVersion      := "2.13.16"
 ThisBuild / fork              := true
 ThisBuild / semanticdbEnabled := true
 ThisBuild / semanticdbVersion := scalafixSemanticdb.revision
