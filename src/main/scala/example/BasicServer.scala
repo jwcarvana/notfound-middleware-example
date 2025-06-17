@@ -6,6 +6,7 @@ import zio.{Scope, ZIO, ZIOAppDefault}
 import zio.http.{Middleware, Server}
 
 object BasicServer extends ZIOAppDefault {
+
   val index = endpoint.get.in("").out(stringBody).zServerLogic(_ => ZIO.succeed("index"))
 
   val app1 = ZioHttpInterpreter().toHttp(index) @@ Middleware.requestLogging()
@@ -19,5 +20,9 @@ object BasicServer extends ZIOAppDefault {
   val app3 = ZioHttpInterpreter().toHttp(goodbye) @@ Middleware.requestLogging()
 
   val run =
-    Server.serve(app1 ++ app2 ++ app3).provide(Server.default).exitCode
+    Server
+      .serve(app1 ++ app2 ++ app3)
+      .provide(Server.default)
+      .exitCode
+
 }
